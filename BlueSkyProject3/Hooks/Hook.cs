@@ -19,6 +19,7 @@ namespace BlueSkyProject3.Hooks
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         [AfterScenario]

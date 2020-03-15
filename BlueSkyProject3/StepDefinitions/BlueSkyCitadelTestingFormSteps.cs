@@ -1,4 +1,6 @@
 ﻿using BlueSkyProject3.PageObjects;
+using FluentAssertions;
+using NUnit.Framework;
 using System;
 using System.Threading;
 using TechTalk.SpecFlow;
@@ -15,13 +17,27 @@ namespace BlueSkyProject3.StepDefinitions
             automationTestingFormPage = new AutomationTestingFormPage();
         }
 
+        [Then(@"the page Url is ""(.*)""")]
+        public void ThenThePageUrlIs(string url)
+        {
+            Assert.AreEqual(url, automationTestingFormPage.GetPageURL); //NUnit
+
+            url.Should().Be(automationTestingFormPage.GetPageURL); //FluentAssertion
+            url.Should().Contain("BlueSky");
+            automationTestingFormPage.GetPageURL.Should().Contain("Bluesky");
+
+            automationTestingFormPage.GetPageURL.Should().Contain(url);
+
+        }
+
+
         [Given(@"I navigate to the Bluesky Testing form")]
         public void GivenINavigateToTheBlueskyTestingForm()
         {
             automationTestingFormPage.NavigateToForm();
         }
 
-
+      
         [When(@"I enter the single Line Text")]
         public void WhenIEnterTheSingleLineText()
         {
@@ -74,22 +90,21 @@ namespace BlueSkyProject3.StepDefinitions
         [When(@"I click on the Submit button")]
         public void WhenIClickOnTheSubmitButton()
         {
-            Thread.Sleep(5000);
-            automationTestingFormPage.ClickSubmitButton();
-
+            automationTestingFormPage.ClickOnSubmit();
         }
 
-        [When(@"I enter my password")]
-        public void WhenIEnterMyPassword()
+        [Then(@"the error message ""(.*)""")]
+        public void ThenTheErrorMessage(string errorMessage)
         {
-            automationTestingFormPage.EnterPassword();
+            automationTestingFormPage.CheckErrorMessageIsDisplayed();
+
+            Assert.AreEqual(errorMessage, automationTestingFormPage.GetTextForError());
         }
 
-
-        [Then(@"the message ""(.*)""")]
-        public void ThenTheMessage()
-        {
+        //[Then(@"the message ""(.*)""")]
+        //public void ThenTheMessage(string message)
+        //{
             
-        }
+        //}
     }
 }

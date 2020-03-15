@@ -5,7 +5,7 @@
 @mytag
 Scenario: Validate Form
 	Given I navigate to site "http://www.giftrete.com"
-	When I enter my email "myetest@test.com"
+	When I enter my email "mytest@test.com"
 	And I enter password "mysecuredPassword"
 	#And I click on submit button
 	#Then the form is submitted

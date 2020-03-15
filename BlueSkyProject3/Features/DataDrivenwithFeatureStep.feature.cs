@@ -107,7 +107,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I navigate to site \"http://www.giftrete.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When("I enter my email \"myetest@test.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I enter my email \"mytest@test.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
  testRunner.And("I enter password \"mysecuredPassword\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

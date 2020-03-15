@@ -1,4 +1,5 @@
 ﻿using BlueSkyProject3.Hooks;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -30,10 +31,31 @@ namespace BlueSkyProject3.PageObjects
 
         IWebElement passwordText => driver.FindElement(By.Id("nf-field-144"));
 
-         IWebElement submitButton => driver.FindElement(By.XPath("//input[@class='ninja-forms-field nf-element ' and @id='nf-field-133']"));
+        IWebElement submit => driver.FindElement(By.Id("nf-field-133"));
 
-        IWebElement password => driver.FindElement(By.CssSelector("#nf-field-144"));
+        IWebElement errorMsg => driver.FindElement(By.CssSelector("#nf-form-errors-9 > nf-errors > nf-section > div"));
 
+        public string GetPageTitle => driver.Title;
+
+        public string GetPageURL => driver.Url;
+
+        //public string GetPageTitle()
+
+        //{
+         //   return driver.Title;
+        //}
+
+        public void CheckErrorMessageIsDisplayed()
+
+        {
+            Assert.IsTrue(errorMsg.Displayed);
+        }
+
+        public string GetTextForError()
+
+        {
+            return errorMsg.Text;
+        }
         public void EnterPassword(string password)
         {
             passwordText.SendKeys(password);
@@ -65,16 +87,10 @@ namespace BlueSkyProject3.PageObjects
             SelectRadio.Click();
         }
 
-        public void EnterPassword()
+        public void ClickOnSubmit()
 
         {
-            password.SendKeys("Deaconyinka");
-        }
-
-        public void ClickSubmitButton()
-
-        {
-            submitButton.Click();
+            submit.Click();
         }
         public void SelectUnitedKingdom()
         {
