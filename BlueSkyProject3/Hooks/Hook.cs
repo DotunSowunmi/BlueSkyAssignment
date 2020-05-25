@@ -14,7 +14,7 @@ namespace BlueSkyProject3.Hooks
         // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
         public static IWebDriver driver;
 
-        [BeforeScenario]
+        [BeforeScenario]  
         public void BeforeScenario()
         {
             driver = new ChromeDriver();

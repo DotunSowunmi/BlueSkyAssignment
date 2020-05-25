@@ -5,6 +5,6 @@
 @mytag
 Scenario: Validate Form with Table
 	Given I navigate to site "http://blueskycitadel.com/automation.testing.form/"
-	#When I enter my email and password
+	When I enter my email and password
 	| Email              | password   |
 	| mytesting@test.com | mypassword |
