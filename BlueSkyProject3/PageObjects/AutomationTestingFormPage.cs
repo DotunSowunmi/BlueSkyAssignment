@@ -1,4 +1,5 @@
 ﻿using BlueSkyProject3.Hooks;
+using BlueSkyProject3.Utilities;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -9,10 +10,12 @@ using System.Threading;
 
 namespace BlueSkyProject3.PageObjects
 {
-
+   
     class AutomationTestingFormPage
     {
         IWebDriver driver;
+
+        Waits waits = new Waits();
         IWebElement SingleLineText => driver.FindElement(By.XPath("//input[@id='nf-field-135']"));
 
         IWebElement SelectOneTwoThree => driver.FindElement(By.XPath("//*[@id='nf-field-136']"));
@@ -34,15 +37,21 @@ namespace BlueSkyProject3.PageObjects
         IWebElement submit => driver.FindElement(By.Id("nf-field-133"));
 
         IWebElement errorMsg => driver.FindElement(By.CssSelector("#nf-form-errors-9 > nf-errors > nf-section > div"));
+        IWebElement successfulMessage => driver.FindElement(By.XPath("//p[contains(text(),'Your form has been successfully submitted.')]"));
 
         public string GetPageTitle => driver.Title;
-
         public string GetPageURL => driver.Url;
+        public string GetTextForSuccessfulMessage()
+        {
+            Thread.Sleep(500);
+            return successfulMessage.Text;
+        }
+        
 
         //public string GetPageTitle()
 
         //{
-         //   return driver.Title;
+        //    return driver.Title;
         //}
 
         public void CheckErrorMessageIsDisplayed()
@@ -54,7 +63,8 @@ namespace BlueSkyProject3.PageObjects
         public string GetTextForError()
 
         {
-            return errorMsg.Text;
+            IWebDriver myDriver = driver;
+            return waits.MyDriverWait(driver, errorMsg).Text;
         }
         public void EnterPassword(string password)
         {
@@ -76,9 +86,9 @@ namespace BlueSkyProject3.PageObjects
 
         public void SelectCheckBoxList()
         {
-            //SelectElement checkBoxList = new SelectElement(selectCheckBoxList123);
-            //checkBoxList.SelectByText("One");
-            selectCheckBoxList123.Click();
+            SelectElement checkBoxList = new SelectElement(selectCheckBoxList123);
+            checkBoxList.SelectByText("One");
+            //selectCheckBoxList123.Click();
         }
 
         public void SelectThreeFromSelectRadio()
@@ -123,6 +133,7 @@ namespace BlueSkyProject3.PageObjects
         public AutomationTestingFormPage()
         {
             driver = Hook.driver;
+            Waits wait = new Waits();
         }
 
         public void NavigateToForm()
@@ -135,6 +146,6 @@ namespace BlueSkyProject3.PageObjects
         {
             driver.Navigate().GoToUrl(url);
         }
-    
+
     }
 }

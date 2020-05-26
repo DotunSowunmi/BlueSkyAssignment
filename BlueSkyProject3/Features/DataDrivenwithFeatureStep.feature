@@ -3,9 +3,9 @@
 	I want to add my data to the feature file
 
 @mytag
-Scenario: Validate Form
-	Given I navigate to site "http://www.giftrete.com"
-	When I enter my email "mytest@test.com"
+Scenario: Validate Form Parameter
+	Given I navigate to site "https://blueskycitadel.com/automation-testing-form/"
+	When I enter my email "yinkaland@gmail.com"
 	And I enter password "mysecuredPassword"
 	#And I click on submit button
-	#Then the form is submitted
+	Then the form is submitted

@@ -136,6 +136,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 17
   testRunner.And("I click on the Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 18
+ testRunner.Then("the message \"Your form has been successfully submitted.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

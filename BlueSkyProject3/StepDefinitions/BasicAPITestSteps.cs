@@ -3,6 +3,7 @@ using RestSharp;
 using System;
 using FluentAssertions;
 using TechTalk.SpecFlow;
+using System.Net;
 
 namespace BlueSkyProject3.StepDefinitions
 {
@@ -16,9 +17,11 @@ namespace BlueSkyProject3.StepDefinitions
         [Given(@"I have access to Github")]
         public void GivenIHaveAccessToGithub()
         {
-             client = new RestClient("https://api.github.com/users/h3rck3r");
+            client = new RestClient("https://api.github.com/users/h3rck3r");
             client.Timeout = -1;
-            
+
+            client = new RestClient("https://api.github.com/users/h3rck3r");
+            client.Timeout = -1;
         }
 
 
@@ -26,15 +29,17 @@ namespace BlueSkyProject3.StepDefinitions
         public void WhenISearchForAUser()
         {
             request = new RestRequest(Method.GET);
-            response= client.Execute(request);
-            
+            //request.AddHeader("Authorization", "Bearer 1234567");
+            //request.AddHeader("Authorization", "Basic  advvhhhbhbjnjnjnk");
+
+            response = client.Execute(request);
         }
 
         [Then(@"the result is displayed")]
         public void ThenTheResultIsDisplayed()
         {
             Assert.That(response.Content.Length > 0);
-            Assert.That(response.StatusCode.ToString()=="OK");
+            Assert.That(response.StatusCode.ToString() == "OK");
             Assert.That(response.IsSuccessful.ToString() == "True");
 
         }

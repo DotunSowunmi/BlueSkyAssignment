@@ -14,5 +14,14 @@ Scenario: Search Result returned
 Scenario: User Details Test
 	Given I have access to Github
 	When I search for a User
+	 I search a userpost
 	Then the result is displayed
-	And the details contain "Dotun"
+	And the details contain "AbelandColeTechnicalTest"
+
+
+	Scenario: User Details Test II
+	Given I have access to Github
+	When I search for a User
+	Then the result is displayed
+	And the details contain "BlueSkyCitadelTestFramework1"
+

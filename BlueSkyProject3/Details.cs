@@ -6,7 +6,9 @@ namespace BlueSkyProject3
 {
     class Details
     {
-        public string Email;
-        public string Password;
+        public string Email()
+
+
+        public string Password
     }
 }

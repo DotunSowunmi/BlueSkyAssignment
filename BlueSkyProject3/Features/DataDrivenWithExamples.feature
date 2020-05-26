@@ -5,10 +5,11 @@
 @mytag
 Scenario Outline: Validate Form Parameter
 	Given I navigate to site "http://www.giftrete.com"
+	And I navigate to site "https://blueskycitadel.com/automation-testing-form/"
 	When I enter my email "<Email>"
 	And I enter password "<Passwords>"
 	And I click on submit button
-	Then the form is submitted
+	#Then the form is submitted
 
 Examples: 
 | Email             | Passwords           |

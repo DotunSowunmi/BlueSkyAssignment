@@ -18,9 +18,9 @@ namespace BlueSkyProject3.StepDefinitions
         [Given(@"I navigate to site ""(.*)""")]
         public void GivenINavigateToSite(string url)
         {
-            automationTestingFormPage.NavigateToFormwithParameter(url);
+            automationTestingFormPage.NavigateToForm();
         }
-        
+
         [When(@"I enter my email ""(.*)""")]
         public void WhenIEnterMyEmail(string email)
         {
@@ -32,17 +32,17 @@ namespace BlueSkyProject3.StepDefinitions
         {
             automationTestingFormPage.EnterPassword(password);
         }
-        
+
         [When(@"I click on submit button")]
         public void WhenIClickOnSubmitButton()
         {
-            
+
         }
-        
+
         [Then(@"the form is submitted")]
         public void ThenTheFormIsSubmitted()
         {
-            
+
         }
     }
 }

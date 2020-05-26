@@ -93,6 +93,12 @@ namespace BlueSkyProject3.StepDefinitions
             automationTestingFormPage.ClickOnSubmit();
         }
 
+        [Then(@"the message ""(.*)""")]
+        public void ThenTheMessage(string successfulMessage)
+        {
+            Assert.AreEqual(successfulMessage, automationTestingFormPage.GetTextForSuccessfulMessage());
+        }
+
         [Then(@"the error message ""(.*)""")]
         public void ThenTheErrorMessage(string errorMessage)
         {
@@ -101,10 +107,5 @@ namespace BlueSkyProject3.StepDefinitions
             Assert.AreEqual(errorMessage, automationTestingFormPage.GetTextForError());
         }
 
-        //[Then(@"the message ""(.*)""")]
-        //public void ThenTheMessage(string message)
-        //{
-            
-        //}
     }
 }

@@ -112,6 +112,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.And("I enter password \"mysecuredPassword\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 10
+ testRunner.And("I click on submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+ testRunner.Then("the form is submitted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

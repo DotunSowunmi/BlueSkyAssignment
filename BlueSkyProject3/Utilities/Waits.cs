@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BlueSkyProject3.Utilities
 {
-    class Waits
+    public class Waits
     {
         public IWebElement WaitForElement(IWebDriver driver, IWebElement element)
         {
@@ -20,5 +20,22 @@ namespace BlueSkyProject3.Utilities
 
                 return null;
         }
-    }
+        public IWebElement MyDriverWait(IWebDriver driver, IWebElement element)
+        {
+            bool elementIsDisplayed = false;
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromMinutes(1));
+            Func<IWebDriver, bool> waitForElement = new Func<IWebDriver, bool>((IWebDriver Web) =>
+            {
+                elementIsDisplayed = element.Displayed;
+                return element.Displayed;
+
+            });
+            wait.Until(waitForElement);
+            if (elementIsDisplayed)
+                return element;
+            else
+                return null;
+        }
 }
+    }
+
