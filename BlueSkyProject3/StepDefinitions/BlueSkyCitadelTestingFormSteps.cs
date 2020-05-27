@@ -26,7 +26,7 @@ namespace BlueSkyProject3.StepDefinitions
             url.Should().Contain("BlueSky");
             automationTestingFormPage.GetPageURL.Should().Contain("Bluesky");
 
-            automationTestingFormPage.GetPageURL.Should().Contain(url);
+            automationTestingFormPage.GetPageURL.Should().Contain("https://blueskycitadel.com/automation.testing.form/");
 
         }
 

@@ -20,12 +20,12 @@ namespace BlueSkyProject3.StepDefinitions
         [When(@"I enter my email and password")]
         public void WhenIEnterMyEmailAndPassword(Table table)
         {
-            var emailAndPassword = table.CreateInstance<Details>();
-            string email = emailAndPassword.Email;
-            string password = emailAndPassword.Password;
+            var emailandPassword = table.CreateInstance<Details>();
+            string email = emailandPassword.Email;
+            string password = emailandPassword.Password;
 
 
-            dataTablePage.EnterEmailAndPassword(email,password);
+            dataTablePage.EnterEmailAndPassword(email, password);
         }
     }
 }

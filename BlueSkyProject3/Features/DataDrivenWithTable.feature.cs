@@ -104,13 +104,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("I navigate to site \"http://blueskycitadel.com/automation.testing.form/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to site \"http://blueskycitadel.com/automation.testing-form/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "Email",
                             "password"});
                 table1.AddRow(new string[] {
-                            "mytesting@test.com",
+                            "yinkaland@gmail.com",
                             "mypassword"});
 #line 8
  testRunner.When("I enter my email and password", ((string)(null)), table1, "When ");

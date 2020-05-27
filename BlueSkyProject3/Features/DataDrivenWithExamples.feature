@@ -12,9 +12,9 @@ Scenario Outline: Validate Form Parameter
 	#Then the form is submitted
 
 Examples: 
-| Email             | Passwords           |
-| myetest@test.com  | mysecuredPassword   |
-|myetest1@test.com  | mysecuredPassword2  |
+| Email                | Passwords           |
+| yinkaland@gmail.com  | mysecuredPassword   |
+|yinkaland@gmail.com   | mysecuredPassword2  |
 
 
 

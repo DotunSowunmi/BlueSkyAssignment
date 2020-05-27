@@ -61,7 +61,6 @@ namespace BlueSkyProject3.PageObjects
         }
 
         public string GetTextForError()
-
         {
             IWebDriver myDriver = driver;
             return waits.MyDriverWait(driver, errorMsg).Text;

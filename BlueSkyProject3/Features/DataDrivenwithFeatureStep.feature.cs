@@ -75,13 +75,13 @@ namespace BlueSkyProject3.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validate Form")]
+        [NUnit.Framework.DescriptionAttribute("Validate Form Parameter")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void ValidateForm()
+        public virtual void ValidateFormParameter()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Form", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Form Parameter", null, new string[] {
                         "mytag"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -104,16 +104,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("I navigate to site \"http://www.giftrete.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to site \"https://blueskycitadel.com/automation-testing-form/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When("I enter my email \"mytest@test.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I enter my email \"yinkaland@gmail.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
  testRunner.And("I enter password \"mysecuredPassword\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
- testRunner.And("I click on submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
  testRunner.Then("the form is submitted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

@@ -35,6 +35,20 @@ namespace BlueSkyProject3.StepDefinitions
             response = client.Execute(request);
         }
 
+
+        [When(@"I search a userpost")]
+        public void WhenISearchAUserpost()
+        {
+            request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", "Basic gguuuhhiohoidoiioouiiiji");
+            request.AlwaysMultipartFormData = true;
+            request.AddParameter("username", "AbelAndcoleTechnicalTest");
+            request.AddParameter("username", "BlueSkyCitadelTestFramework1");
+
+            response = client.Execute(request);
+
+        }
+
         [Then(@"the result is displayed")]
         public void ThenTheResultIsDisplayed()
         {
@@ -43,6 +57,7 @@ namespace BlueSkyProject3.StepDefinitions
             Assert.That(response.IsSuccessful.ToString() == "True");
 
         }
+        
 
         [Then(@"the details contain ""(.*)""")]
         public void ThenTheDetailsContain(string user)

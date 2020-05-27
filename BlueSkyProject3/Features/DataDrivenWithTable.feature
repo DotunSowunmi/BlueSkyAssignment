@@ -4,7 +4,7 @@
 
 @mytag
 Scenario: Validate Form with Table
-	Given I navigate to site "http://blueskycitadel.com/automation.testing.form/"
+	Given I navigate to site "http://blueskycitadel.com/automation-testing-form/"
 	When I enter my email and password
-	| Email              | password   |
+	| Email               | password   |
 	| yinkaland@gmail.com | mypassword |
